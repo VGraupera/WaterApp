@@ -1,0 +1,12 @@
+--- 
+name: Water
+bbver: 4.6
+sdk: /usr/lib/ruby/gems/1.8/gems/rhodes-1.2.2
+version: 1.2.2
+applog: rholog.txt
+vendor: rhomobile
+iphone: 
+  configuration: Debug
+  sdk: iphonesimulator3.0
+  codesignidentity: 
+  entitlements: 
