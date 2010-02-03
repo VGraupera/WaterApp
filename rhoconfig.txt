@@ -23,5 +23,7 @@ MaxLogFileSize=0
 # Sync server url.  This must be the full path to your sources.  For example: http://rhomobile.rhohub.com/apps/SugarCRM/sources/
 syncserver = 'http://adamb.rhohub.com/apps/Water/sources/'
  
+LastLatitude=0
+LastLongitude=0
 
 # Edited by lars

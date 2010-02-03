@@ -1,7 +1,7 @@
 --- 
 name: Water
 bbver: 4.6
-sdk: /usr/lib/ruby/gems/1.8/gems/rhodes-1.2.2
+sdk: /Users/vidal/code/rho_apps/rhodes
 version: 1.2.2
 applog: rholog.txt
 vendor: rhomobile

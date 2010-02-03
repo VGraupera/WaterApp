@@ -11,7 +11,7 @@ class SettingsController < Rho::RhoController
 
   def login
     if SyncEngine::logged_in == 0
-       SyncEngine.login("adam", "password", (url_for :controller=>"Settings",:action => :login_callback) )
+       SyncEngine.login("adam", "password", url_for(:action => :login_callback) )
        redirect :controller=>"Settings", :action => :wait
     end
   end
@@ -38,7 +38,7 @@ class SettingsController < Rho::RhoController
   def do_login
     if @params['login'] and @params['password']
       begin
-        SyncEngine.login(@params['login'], @params['password'], (url_for :action => :login_callback) )
+        SyncEngine.login(@params['login'], @params['password'], url_for(:action => :login_callback) )
         render :action => :wait
       rescue Rho::RhoError => e
         @msg = e.message
