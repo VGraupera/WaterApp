@@ -7,7 +7,7 @@ class SiteController < Rho::RhoController
     @sites = Site.find :all
     @lat=GeoLocation.latitude
     @long=GeoLocation.longitude
-    @annotations << {:latitude => @lat, :longitude => @long, :title => "Current location", :subtitle => ""}
+ #   @annotations << {:latitude => @lat, :longitude => @long, :title => "Current location", :subtitle => ""}
     @sites.each do |x|
       @annotations << {:latitude=>x.LatitudeMeasure.to_f,:longitude=>x.LongitudeMeasure.to_f,:title=>x.MonitoringLocationName,
                       :url=>"http://localhost:8080/app/Site/show?id="+x.object+"&back=map"}
@@ -55,7 +55,7 @@ class SiteController < Rho::RhoController
       @sites=@sites.sort { |x,y| @distances[x.object]<=>@distances[y.object] }
       
       # reject ones that are too far away to not appear on map
-      @sites=@sites.reject { |x| @distances[x.object] > @radius*2 }
+      @sites=@sites.reject { |x| @distances[x.object] > 10.0 }
     
       if @params["search_params"].nil? and (distance_moved > @radius/2 or @sites.nil? or @sites.size==0)           
         Site.search(
